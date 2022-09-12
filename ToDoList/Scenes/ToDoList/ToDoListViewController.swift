@@ -30,10 +30,24 @@ class ToDoListViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel.getItemsFromDefaults()
+        tableView.reloadData()
+    }
+    
     func configure()  {
+        title = "To Do List"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         addSubViews()
         makeConstraints()
         
+    }
+    
+    @objc func addButtonTapped(){
+        let vc = CreateToDoViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 }
@@ -41,12 +55,12 @@ class ToDoListViewController: UIViewController {
 extension ToDoListViewController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        viewModel.toDos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "toDoCell") as! ToDoTableViewCell
-        let item = ToDo(title: "Coding", content: "Make a todolist app.", date: "01/09/1999")
+        let item = viewModel.toDos[indexPath.row]
         cell.delegate = self
         cell.setTodoCell(item: item)
         
@@ -66,10 +80,11 @@ extension ToDoListViewController {
 }
 
 //MARK: TodoCell Conform Protocol
-extension ToDoListViewController: ToDoTableViewCellProtocol{
+extension ToDoListViewController: ToDoTableViewCellProtocol {
     
     func checkButtonTapped(item: ToDo) {
-            
+        viewModel.checkButtonTapped(item: item)
+        tableView.reloadData()
     }
     
     func infoButtonTapped(item: ToDo) {

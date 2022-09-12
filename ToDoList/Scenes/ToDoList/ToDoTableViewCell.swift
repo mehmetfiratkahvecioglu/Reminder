@@ -86,11 +86,11 @@ class ToDoTableViewCell: UITableViewCell {
     
     
    @objc func checkButtonTapped(){
-        
+       delegate?.checkButtonTapped(item: todoCell ?? ToDo(title: "null", content: "null", date: "null"))
     }
 
     @objc func infoButtonTapped(){
-        
+        delegate?.infoButtonTapped(item: todoCell ?? ToDo(title: "null", content: "null", date: "null"))
     }
     
 
