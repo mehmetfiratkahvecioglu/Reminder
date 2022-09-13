@@ -1,14 +1,13 @@
 //
-//  CreateToDoViewModel.swift
+//  DetailToDoViewModel.swift
 //  ToDoList
 //
-//  Created by Fırat Kahvecioğlu on 12.09.2022.
+//  Created by Fırat Kahvecioğlu on 13.09.2022.
 //
 
 import Foundation
 
-class CreateToDoViewModel {
-    
+class DetailToDoViewModel{
     private var toDos = [ToDo]()
     
     private let key = Constants.userDefautsToDosKey
@@ -17,10 +16,16 @@ class CreateToDoViewModel {
         getItemsFromDefaults()
     }
  
- 
     
-    func addTodo(item: ToDo) {
-        toDos.append(item)
+    
+    
+    func editTodo(item: ToDo) {
+        guard let index = toDos.firstIndex(where: { ToDo in
+            ToDo.id == item.id
+        }) else { return  }
+        
+        toDos[index] = item
+        
         addItemsToDefaults()
     }
     
@@ -36,6 +41,4 @@ class CreateToDoViewModel {
         guard let data = try?  JSONEncoder().encode(toDos) else { return }
         UserDefaults.standard.set(data, forKey: key)
     }
-    
-    
 }

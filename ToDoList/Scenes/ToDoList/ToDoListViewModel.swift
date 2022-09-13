@@ -34,4 +34,11 @@ class ToDoListViewModel {
         guard let allITems = try? JSONDecoder().decode([ToDo].self, from: data as! Data)  else { return }
         toDos = allITems
     }
+    
+    func deleteItemFromDefaults(index: IndexPath){
+        toDos.remove(at: index.row)
+        addItemsToDefaults()
+        
+    }
+    
 }

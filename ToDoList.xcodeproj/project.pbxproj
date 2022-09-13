@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84089AF228D07A1B007794AC /* DetailToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84089AF128D07A1B007794AC /* DetailToDoViewController.swift */; };
+		84089AF428D07A6C007794AC /* DetailToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84089AF328D07A6C007794AC /* DetailToDoViewModel.swift */; };
 		8486F5E028D05C5B00472429 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486F5DF28D05C5B00472429 /* String+Ext.swift */; };
 		8486F5E228D05F1B00472429 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486F5E128D05F1B00472429 /* Date+Ext.swift */; };
 		8486F5E428D063A200472429 /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486F5E328D063A200472429 /* DateFormatter+Ext.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84089AF128D07A1B007794AC /* DetailToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailToDoViewController.swift; sourceTree = "<group>"; };
+		84089AF328D07A6C007794AC /* DetailToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailToDoViewModel.swift; sourceTree = "<group>"; };
 		8486F5DF28D05C5B00472429 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		8486F5E128D05F1B00472429 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		8486F5E328D063A200472429 /* DateFormatter+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Ext.swift"; sourceTree = "<group>"; };
@@ -55,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84089AF028D0792D007794AC /* DetailToDo */ = {
+			isa = PBXGroup;
+			children = (
+				84089AF128D07A1B007794AC /* DetailToDoViewController.swift */,
+				84089AF328D07A6C007794AC /* DetailToDoViewModel.swift */,
+			);
+			path = DetailToDo;
+			sourceTree = "<group>";
+		};
 		84A4762028CDD4E200901306 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +171,7 @@
 		84F0D55128CDD38800D2F894 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				84089AF028D0792D007794AC /* DetailToDo */,
 				84A4763328CF584500901306 /* CreateToDo */,
 				84F0D54728CDD2DB00D2F894 /* LaunchScreen.storyboard */,
 				84A4762328CDD5A900901306 /* ToDoList */,
@@ -248,7 +262,9 @@
 				84A4762728CDDB0B00901306 /* ToDoListViewController.swift in Sources */,
 				84A4763028CDFE7500901306 /* ToDo.swift in Sources */,
 				84A4763728CF588A00901306 /* CreateToDoViewModel.swift in Sources */,
+				84089AF428D07A6C007794AC /* DetailToDoViewModel.swift in Sources */,
 				84A4763228CE56E400901306 /* Constants.swift in Sources */,
+				84089AF228D07A1B007794AC /* DetailToDoViewController.swift in Sources */,
 				8486F5E428D063A200472429 /* DateFormatter+Ext.swift in Sources */,
 				84F0D53F28CDD2D900D2F894 /* SceneDelegate.swift in Sources */,
 				84A4762B28CDE52600901306 /* ToDoTableViewCell.swift in Sources */,

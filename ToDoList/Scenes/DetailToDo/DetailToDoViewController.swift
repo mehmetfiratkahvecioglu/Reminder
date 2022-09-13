@@ -1,16 +1,17 @@
 //
-//  CreateToDoViewController.swift
+//  DetailToDoViewController.swift
 //  ToDoList
 //
-//  Created by Fırat Kahvecioğlu on 12.09.2022.
+//  Created by Fırat Kahvecioğlu on 13.09.2022.
 //
 
 import UIKit
-import SnapKit
 
-class CreateToDoViewController: UIViewController {
- 
-    private let viewModel = CreateToDoViewModel()
+class DetailToDoViewController: UIViewController {
+
+    private let viewModel = DetailToDoViewModel()
+    
+    var ToDoItem: ToDo?
     
     private let titleLabel: UILabel = {
        let label = UILabel()
@@ -62,7 +63,7 @@ class CreateToDoViewController: UIViewController {
         date.locale = .current
         return date
     }()
-   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,32 +71,37 @@ class CreateToDoViewController: UIViewController {
     }
     
     func configure() {
-        title = "Create"
+        title = "Edit"
         addSubViews()
         makeAllConstraints()
         view.backgroundColor = .white
         navigationItem.largeTitleDisplayMode = .never
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .plain, target: self, action: #selector(createButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonTapped))
     }
 
-    @objc func createButtonTapped(){
+    @objc func editButtonTapped(){
         let title = self.titleTextField.text ?? ""
         let content = self.contentTextField.text ?? ""
         let dateAndTime = self.datepicker.date.getDateAndTimeAsString()
+        let newTodo = ToDoItem?.updateToDo(title: title, content: content, date: dateAndTime) ?? ToDo(title: "null", content: "null", date: "null")
         
-        
-        let newTodo = ToDo(title: title, content: content, date: dateAndTime)
-        viewModel.addTodo(item: newTodo)
+        viewModel.editTodo(item: newTodo)
         
         navigationController?.popToRootViewController(animated: true)
         
     }
 
+    func setEditToDoViewController()  {
+        self.titleTextField.text = ToDoItem?.title
+        self.contentTextField.text = ToDoItem?.content
+        self.datepicker.date = ToDoItem?.date.getDateAndTimeAsDate() ?? Date()
+    }
+    
 }
 
 
-// MARK: Make all constraints and add subviews
-extension CreateToDoViewController {
+// MARK: Make all constraints and addsubviews
+extension DetailToDoViewController {
     func addSubViews() {
         view.addSubview(titleLabel)
         view.addSubview(contentLabel)
