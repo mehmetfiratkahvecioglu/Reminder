@@ -13,7 +13,7 @@ Swift with UIKit
 ## Tools
 * MVVM
 * UIKit
-*Codable
+* Codable
 * UserDefaults
 * SnapKit
 * Programmatically design
