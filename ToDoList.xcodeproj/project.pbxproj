@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8486F5E028D05C5B00472429 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486F5DF28D05C5B00472429 /* String+Ext.swift */; };
+		8486F5E228D05F1B00472429 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486F5E128D05F1B00472429 /* Date+Ext.swift */; };
+		8486F5E428D063A200472429 /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486F5E328D063A200472429 /* DateFormatter+Ext.swift */; };
 		84A4762728CDDB0B00901306 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4762628CDDB0B00901306 /* ToDoListViewController.swift */; };
 		84A4762928CDE4B000901306 /* ToDoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4762828CDE4B000901306 /* ToDoListViewModel.swift */; };
 		84A4762B28CDE52600901306 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4762A28CDE52600901306 /* ToDoTableViewCell.swift */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8486F5DF28D05C5B00472429 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		8486F5E128D05F1B00472429 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		8486F5E328D063A200472429 /* DateFormatter+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Ext.swift"; sourceTree = "<group>"; };
 		84A4762628CDDB0B00901306 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		84A4762828CDE4B000901306 /* ToDoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewModel.swift; sourceTree = "<group>"; };
 		84A4762A28CDE52600901306 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
@@ -96,6 +102,9 @@
 		84A4762528CDD60100901306 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8486F5DF28D05C5B00472429 /* String+Ext.swift */,
+				8486F5E128D05F1B00472429 /* Date+Ext.swift */,
+				8486F5E328D063A200472429 /* DateFormatter+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -235,12 +244,15 @@
 				84A4762928CDE4B000901306 /* ToDoListViewModel.swift in Sources */,
 				84F0D53D28CDD2D900D2F894 /* AppDelegate.swift in Sources */,
 				84A4763528CF586D00901306 /* CreateToDoViewController.swift in Sources */,
+				8486F5E228D05F1B00472429 /* Date+Ext.swift in Sources */,
 				84A4762728CDDB0B00901306 /* ToDoListViewController.swift in Sources */,
 				84A4763028CDFE7500901306 /* ToDo.swift in Sources */,
 				84A4763728CF588A00901306 /* CreateToDoViewModel.swift in Sources */,
 				84A4763228CE56E400901306 /* Constants.swift in Sources */,
+				8486F5E428D063A200472429 /* DateFormatter+Ext.swift in Sources */,
 				84F0D53F28CDD2D900D2F894 /* SceneDelegate.swift in Sources */,
 				84A4762B28CDE52600901306 /* ToDoTableViewCell.swift in Sources */,
+				8486F5E028D05C5B00472429 /* String+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

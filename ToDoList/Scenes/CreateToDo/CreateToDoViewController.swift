@@ -55,6 +55,15 @@ class CreateToDoViewController: UIViewController {
         return textField
     }()
     
+    private let datepicker: UIDatePicker = {
+       let date = UIDatePicker()
+        date.datePickerMode = .dateAndTime
+        date.preferredDatePickerStyle = .compact
+        date.locale = .current
+        return date
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -70,11 +79,10 @@ class CreateToDoViewController: UIViewController {
     @objc func createButtonTapped(){
         let title = self.titleTextField.text ?? ""
         let content = self.contentTextField.text ?? ""
-        // MARK: Change this place
-        let date = "/!/!/!"
+        let dateAndTime = self.datepicker.date.getDateAndTimeAsString()
         
         
-        let newTodo = ToDo(title: title, content: content, date: date)
+        let newTodo = ToDo(title: title, content: content, date: dateAndTime)
         viewModel.addTodo(item: newTodo)
         
         navigationController?.popToRootViewController(animated: true)
@@ -92,6 +100,8 @@ extension CreateToDoViewController {
         view.addSubview(dateLabel)
         view.addSubview(titleTextField)
         view.addSubview(contentTextField)
+        view.addSubview(datepicker)
+        
         
     }
     
@@ -127,6 +137,11 @@ extension CreateToDoViewController {
             make.trailing.equalTo(contentTextField.snp.trailing)
         }
         
+        datepicker.snp.makeConstraints { make in
+            make.top.equalTo(dateLabel.snp.bottom)
+            make.leading.equalTo(dateLabel.snp.leading)
+            
+        }
         
         
     }
